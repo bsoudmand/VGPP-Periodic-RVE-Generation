@@ -170,6 +170,13 @@ function result = run_fixed_final_radius_VGPP(params)
         end
     end
 
+    % The candidate grid includes the periodic upper endpoints. Represent
+    % those exact endpoints by their identical zero-boundary locations.
+    % Do not wrap arbitrary invalid or nonfinite coordinates: the audit
+    % below must continue to reject them.
+    cxList(cxList == Lx) = 0;
+    cyList(cyList == Ly) = 0;
+
     % Final strict audit with the same tolerance.
     [hasOverlap,maxOverlap,minClearance,nOverlapPairs] = ...
         final_overlap_audit_PBC(cxList,cyList,rList,params);
