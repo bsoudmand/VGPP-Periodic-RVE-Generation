@@ -1,0 +1,1 @@
+From the supplied original 20-realization CSV (no code rerun), at nominal phi_A=0.60: mean=1360.393253165 s, sample SD=5869.086361357 s, median=47.604056250 s, maximum individual time=26295.333876900 s. These quantities must not be confused in Fig. 4b.
