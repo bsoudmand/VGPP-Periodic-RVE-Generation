@@ -1,11 +1,31 @@
 cff-version: 1.2.0
-message: "Please cite this software and the associated article if you use it."
-title: "Void-Guided Particle Packing (VGPP): MATLAB research implementation"
+message: >-
+  If you use this software, cite the authors, software title, version, repository
+  URL, and exact commit used. Cite the associated research article separately
+  when its bibliographic details are available. No publication or software DOI
+  has been assigned in this metadata.
 type: software
+title: "Void-Guided Particle Packing (VGPP) for Two-Dimensional Periodic RVE Generation: MATLAB Implementation"
 authors:
   - family-names: "Hashemi Soudmand"
     given-names: "Behzad"
   - family-names: "Mohsenzadeh"
     given-names: "Rasool"
 version: "0.3.0-preview"
-date-released: "2026-10-30"
+repository-code: "https://github.com/bsoudmand/VGPP-Periodic-RVE-Generation"
+url: "https://github.com/bsoudmand/VGPP-Periodic-RVE-Generation"
+abstract: >-
+  MATLAB research implementation of Void-Guided Particle Packing for
+  two-dimensional periodic disk configurations intended for particulate RVE
+  studies. The consolidated workflow includes a monodisperse, fixed-final-radius
+  VGPP/RSA-PBC benchmark, geometric auditing, spatial statistics, checkpoints,
+  and archived-reference comparison routines. Full validation of the
+  consolidated code in MATLAB R2024b remains outstanding; complete manuscript
+  reproducibility is not claimed.
+keywords:
+  - "Void-Guided Particle Packing"
+  - "periodic boundary conditions"
+  - "representative volume elements"
+  - "particulate microstructures"
+  - "MATLAB"
+  - "random sequential adsorption"
