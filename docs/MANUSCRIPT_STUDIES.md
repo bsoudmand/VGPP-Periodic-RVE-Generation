@@ -33,5 +33,6 @@ The original study families are retained as standalone scripts under `studies/ma
 - MAT re-export scripts for the high-density configuration require the original MAT state. The already exported full-precision CSV is included and can be audited without that state.
 - Some figure scripts mix archived data, generation, and optional replotting. They have not all been executed end to end. Do not claim that every manuscript panel is reproduced by running `main.m`.
 - The numeric matrix `R2_C39_rdf_raw_numeric.csv` has no header. Read it with `readmatrix`, not as a headed table; otherwise one observation is lost.
+- The archived 200-row `Table_R1_targetVF_raw.csv` is a distinct earlier sweep. Do not merge it with the 240-row fixed-final-radius VGPP/RSA-PBC reference or interpret it as missing cases from that benchmark.
 
 The clean reference archive deliberately excludes generated MAT checkpoints, PNGs, temporary files, nested development ZIPs, and pre-resume CSV backups. These exclusions do not imply the excluded scientific states never existed; their exact original versions remain in the separate provenance deliverable.

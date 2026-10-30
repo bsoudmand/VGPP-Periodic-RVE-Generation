@@ -2,7 +2,7 @@
 
 Repository: https://github.com/bsoudmand/VGPP-Periodic-RVE-Generation  
 Preparation version: `0.3.1-preview` (not a published release).  
-Compared checkpoint snapshot: 2026-10-30T20:20:35+00:00.
+Compared checkpoint snapshot: 2026-10-30T20:33:45+00:00.
 
 ## Release decision
 
@@ -39,29 +39,31 @@ The source and parameter mismatch tests reject changed identifiers; they do not 
 
 ## Quantitative partial comparison
 
-136 unique checkpoint cases were inspected, with passing coordinate/radius audits and matching source/seed identifiers. Four discrete fields were compared exactly and eleven continuous fields at absolute tolerance 1e-7. Wall-clock time was excluded from numerical equivalence tests. See `BENCHMARK_SNAPSHOT.csv`, `BENCHMARK_PARTIAL_COMPARISON.csv`, and `CHECKPOINT_INTEGRITY.csv`.
+162 unique checkpoint cases were inspected, with passing coordinate/radius audits and matching source/seed identifiers. Four discrete fields were compared exactly and eleven continuous fields at absolute tolerance 1e-7. Wall-clock time was excluded from numerical equivalence tests. See `BENCHMARK_SNAPSHOT.csv`, `BENCHMARK_PARTIAL_COMPARISON.csv`, and `CHECKPOINT_INTEGRITY.csv`.
 
 | Field | Compared cases | Mismatches | Maximum absolute difference |
 |---|---:|---:|---:|
-| TargetN | 136 | 0 | 0 |
-| ReachedTarget | 136 | 0 | 0 |
-| NumberOfParticles | 136 | 0 | 0 |
-| OverlappingPairs | 136 | 0 | 0 |
-| FinalVF | 136 | 0 | 7.1054273576e-15 |
-| DiscreteTargetVF | 136 | 0 | 0 |
-| MeanRadius | 136 | 0 | 0 |
-| RadiusScale | 136 | 0 | 0 |
-| MaxOverlap | 136 | 0 | 0 |
-| MinClearance | 136 | 0 | 4.39969241595e-16 |
-| LocalVFRSD | 136 | 34 | 0.0140414990048 |
-| LowVFCellFraction | 136 | 13 | 0.015625 |
-| MeanNND | 136 | 0 | 0 |
-| NNDCV | 136 | 0 | 1.11022302463e-16 |
-| RDFFirstPeak | 136 | 0 | 0 |
+| TargetN | 162 | 0 | 0 |
+| ReachedTarget | 162 | 0 | 0 |
+| NumberOfParticles | 162 | 0 | 0 |
+| OverlappingPairs | 162 | 0 | 0 |
+| FinalVF | 162 | 0 | 7.1054273576e-15 |
+| DiscreteTargetVF | 162 | 0 | 0 |
+| MeanRadius | 162 | 0 | 0 |
+| RadiusScale | 162 | 0 | 0 |
+| MaxOverlap | 162 | 0 | 0 |
+| MinClearance | 162 | 0 | 4.39969241595e-16 |
+| LocalVFRSD | 162 | 34 | 0.0140414990048 |
+| LowVFCellFraction | 162 | 13 | 0.015625 |
+| MeanNND | 162 | 0 | 0 |
+| NNDCV | 162 | 0 | 1.11022302463e-16 |
+| RDFFirstPeak | 162 | 0 | 0 |
 
 The two failing fields are center-based local cell-bin statistics. For seed 7402, local RSD changes from 0.196509342287901 to 0.198639948000739 while particle count, area fraction, clearance, NN-CV, and RDF peak agree. Moving a periodic endpoint from L to 0 leaves the torus geometry unchanged but moves the center from the legacy last bin to the first bin. The reference therefore cannot be declared reproduced under the canonical storage convention. No sampler switch, relaxed tolerance, or modified reference value was used to conceal this discrepancy. Its scientific reconciliation remains a release blocker.
 
 Partial timing distributions for matched cases are recorded in `BENCHMARK_RUNTIME_PARTIAL.csv`. Compare attempted and successful populations consistently. Different hardware and concurrent workload affect elapsed time; exact equality is not expected, and performance equivalence has not been established.
+
+For the completed 20-case VGPP group at area fraction 0.60, the rerun mean is 49.744476655 s versus 1360.393253165 s in the archive. Archived seed 7718 records 26295.3338769 s; its matching rerun records 60.4780564 s, with agreement in the checked non-binning numerical fields. The archive lacks per-case execution/timing traces needed to establish the cause. This large outlier difference cannot be attributed specifically to hardware from the available evidence; it is not evidence of a validated algorithmic speedup. The new timings were not measured under an isolated workload.
 
 ## Supplementary evidence
 

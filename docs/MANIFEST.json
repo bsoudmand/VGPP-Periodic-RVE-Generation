@@ -14,7 +14,7 @@
   "full_benchmark_validated": false,
   "validation_scope": "Targeted regressions and archived-data audits passed; full rerun incomplete; local-bin statistic discrepancies unresolved",
   "matlab_version": "24.2.0.2712019 (R2024b)",
-  "compared_checkpoint_cases": 136,
+  "compared_checkpoint_cases": 162,
   "manuscript_study_scripts": 33,
   "supplementary_reference_entries": 268
 }
