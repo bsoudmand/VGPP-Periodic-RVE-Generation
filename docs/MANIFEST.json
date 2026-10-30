@@ -1,13 +1,17 @@
 {
   "package": "VGPP MATLAB R2024b core benchmark",
   "package_version": "0.3.0-preview",
-  "files_count": 62,
+  "files_count": 63,
   "matlab_files": 45,
   "active_benchmark_sources": 34,
   "source_sha256": "9baf174d6d47a97689dfe9ed97fa7dc655798653aab6d9d1b43a5168bd4016a9",
   "reviewed_source_scripts": 42,
   "archived_benchmark_records": 240,
-  "matlab_executed": false,
+  "matlab_executed": true,
   "full_study_reproduction": false,
-  "license_approved": false
+  "license_approved": false,
+  "matlab_self_test_passed": true,
+  "full_benchmark_validated": false,
+  "validation_scope": "Self-test and two direct benchmark cases: nominal area fraction 0.40, seed 7401, VGPP and RSA-PBC; see VERIFICATION_REPORT.md",
+  "matlab_version": "24.2.0.2712019 (R2024b)"
 }

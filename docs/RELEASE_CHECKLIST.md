@@ -1,6 +1,6 @@
 # Publication release gate
 
-- [ ] Run MATLAB R2024b with Image Processing Toolbox (not available in packaging environment).
+- [x] Start MATLAB R2024b with Image Processing Toolbox and run the included self-test plus a limited nominal-area-fraction-0.40 smoke test (30 October 2026; see VERIFICATION_REPORT.md). Full benchmark validation remains outstanding.
 - [ ] Execute smoke test and resume from per-realization checkpoints; modify a source file in a disposable copy and confirm checkpoint reuse is blocked.
 - [ ] Validate 20-run benchmark counts, success states, geometry, nearest-neighbor/RDF statistics and nonfinite patterns against reference CSV; investigate every deviation.
 - [ ] Compare legacy weighted sampler with opt-in log-key sampler in independent runs. Do not conflate numerical repair with exact reproduction.
