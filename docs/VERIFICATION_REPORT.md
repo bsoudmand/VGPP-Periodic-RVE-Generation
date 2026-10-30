@@ -1,3 +1,5 @@
+> Historical packaging/preliminary-check snapshot. Current execution results and release blockers are in `VALIDATION_REPORT.md`.
+
 # VGPP verification report
 
 Date: 30 October 2026. Software version: `0.3.0-preview`.
@@ -15,7 +17,7 @@ Repository: https://github.com/bsoudmand/VGPP-Periodic-RVE-Generation
 
 ## MATLAB execution
 
-MATLAB executable: `C:\Program Files\MATLAB\R2024b\bin\matlab.exe`.
+MATLAB executable: MATLAB R2024b executable.
 
 The first batch startup failed before project execution with `failed to load settings errors_warnings plugin`. A second launch used an isolated `MATLAB_PREFDIR` under this task's workspace and completed successfully with exit code 0. Existing user preferences were not modified.
 

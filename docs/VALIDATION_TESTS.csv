@@ -1,0 +1,7 @@
+Check,Passed
+Core self-test,1
+Continuous-coordinate tolerance,1
+Invalid geometry rejection,1
+Upper-endpoint seed 7402 regression,1
+Checkpoint resume and identity,1
+Optional LS analytical tests,1

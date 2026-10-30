@@ -1,14 +1,17 @@
-# Publication release gate
+# Public-release checklist
 
-- [x] Start MATLAB R2024b with Image Processing Toolbox and run the included self-test plus a limited nominal-area-fraction-0.40 smoke test (30 October 2026; see VERIFICATION_REPORT.md). Full benchmark validation remains outstanding.
-- [ ] Execute smoke test and resume from per-realization checkpoints; modify a source file in a disposable copy and confirm checkpoint reuse is blocked.
-- [ ] Validate 20-run benchmark counts, success states, geometry, nearest-neighbor/RDF statistics and nonfinite patterns against reference CSV; investigate every deviation.
-- [ ] Compare legacy weighted sampler with opt-in log-key sampler in independent runs. Do not conflate numerical repair with exact reproduction.
-- [ ] Integrate, test, and document supplementary experiments essential to the paper (high-density tests, positive clearance, LS, ablation, order, sensitivity, scaling).
-- [ ] Choose and approve a software license; add canonical LICENSE file prior to public release.
-- [ ] Verify author metadata and citation version; issue a Zenodo DOI only after final release.
-- [ ] Tag release with MATLAB version, code commit, software requirements, and validated output manifest.
-- [ ] Supply exact figure-generation scripts for every published figure, or document supported scope explicitly.
-
-- [ ] Confirm the 4,000-of-50,000 sampler self-test and nonfinite/out-of-domain geometry tests pass in MATLAB.
-- [ ] Regenerate docs/MANIFEST.json after any release changes and verify the archived file count.
+- [x] Preserve the existing repository and modular numerical kernels.
+- [x] Execute MATLAB R2024b core and targeted safeguard regressions.
+- [x] Verify checkpoint reuse and rejection of incompatible parameter/source/seed metadata.
+- [x] Inventory the ten manuscript study families and package original CSV/coordinate references.
+- [x] Independently audit archived geometry and execute the selected original archived-data audit scripts.
+- [x] Regenerate archived Figure 4 with exported numerical values.
+- [ ] Finish all 240 benchmark cases and investigate every numerical discrepancy.
+- [ ] Reconcile canonical periodic endpoint storage with legacy local-bin statistics without concealing changes.
+- [ ] Complete required ordering/MC/figure/continuation checks and identify all manuscript scope limitations.
+- [ ] Verify a clean source archive and exact commit for a release candidate.
+- [ ] Obtain owner approval for MIT and its copyright-holder line; only then add root LICENSE and update metadata.
+- [ ] Obtain explicit authorization before changing private visibility or publishing any release.
+- [ ] Prepare v1.0.0 only after the required validation passes.
+- [ ] After public-release approval, archive the exact approved release through official GitHub–Zenodo integration where available; verify the real DOI and archive files.
+- [ ] Replace conditional manuscript/reviewer drafts only after public access and DOI publication are confirmed.

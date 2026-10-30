@@ -1,3 +1,5 @@
+> Historical packaging/preliminary-check snapshot. Current execution results and release blockers are in `VALIDATION_REPORT.md`.
+
 # Audit decisions and unresolved items
 
 - Inventory: 8 separately uploaded MATLAB files and 34 MATLAB files from `R2_C38_RuntimeScaling.zip`. Hashes and dispositions are in `SCRIPT_AUDIT.csv`.
