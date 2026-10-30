@@ -2,14 +2,16 @@
 
 MATLAB implementation of Void-Guided Particle Packing (VGPP) for generating two-dimensional periodic particulate representative volume elements (RVEs) composed of circular particles. The consolidated workflow implements a fixed-final-radius, monodisperse benchmark and comparison with random sequential adsorption under periodic boundary conditions (RSA-PBC).
 
-**Version:** `0.3.0-preview`  
+**Version:** `0.3.1-preview`  
 **Repository:** https://github.com/bsoudmand/VGPP-Periodic-RVE-Generation
 
 ## Research purpose and validation status
 
 The software supports investigation of attainable particle area fraction, geometric admissibility, computational cost, and spatial statistics in periodic disk packings. These geometric configurations are intended for particulate microstructure studies; the code does not demonstrate that an individual generated domain is statistically representative for a particular material property.
 
-Full validation of the consolidated implementation in MATLAB R2024b remains outstanding. On 30 October 2026, the included self-test passed in MATLAB R2024b, and a limited smoke test at nominal area fraction 0.40 with seed 7401 passed for both VGPP and RSA-PBC. Each case attained 393 particles and passed geometric auditing; the compared numerical fields agreed with the corresponding two archived records within the configured tolerance, excluding runtime. Independent pairwise checks of the exported coordinates also found no overlap violations. This checks two cases, not the complete 240-case benchmark. Checkpoint/resume behavior, dense-packing cases, figure generation, optional studies, and complete manuscript reproducibility have not been validated by this check. See `docs/VERIFICATION_REPORT.md` for the precise scope and evidence.
+**Full validation has not passed.** A checkpointed 240-case rerun is in progress. At the numerically inspected snapshot (2026-10-30T20:20:35+00:00), 136 unique cases were available. Counts, target-attainment flags, radii, periodic-overlap measures, NN statistics, and RDF first peaks agreed with the matched reference records within the configured tolerances. However, `LocalVFRSD` and `LowVFCellFraction` disagreed in some cases because exact upper-boundary centers are now stored at their equivalent zero-boundary positions. The legacy cell-binning calculation is sensitive to this representation. The archived reference CSV and numerical tolerances have not been altered to force agreement.
+
+MATLAB R2024b core/safeguard regressions, checkpoint compatibility/resume tests, and optional LS analytical tests passed. Three original archived-data MATLAB audits also completed. These checks do not establish full manuscript reproducibility or authorize a public release. See `docs/VALIDATION_REPORT.md` for quantitative results and `docs/MANUSCRIPT_STUDIES.md` for study coverage and limitations.
 
 ## Main algorithm features
 
@@ -42,7 +44,9 @@ src/benchmark/                Drivers, checkpoints, figures, source fingerprint
 src/analysis/                 Spatial statistics and reference summaries
 src/validation/               Self-tests and reference-comparison routine
 inputs/reference/             Archived 240-record benchmark CSV
-studies/optional/             Optional independent LS reference study
+studies/optional/             Modular LS reference and analytical tests
+studies/manuscript/           Original standalone manuscript study families
+inputs/supplementary_reference.zip  Archived study CSVs, coordinates, settings
 outputs/benchmark/            Generated numerical tables
 outputs/figures/              Generated figures
 outputs/checkpoints/          Generated per-realization MAT checkpoints
@@ -156,9 +160,19 @@ Reference identifiers and discrete counts/status fields are compared exactly. No
 
 ## Scope and known limitations
 
-The automated benchmark covers two-dimensional, monodisperse, fixed-final-radius disks under periodic boundary conditions. Optional LS source files are included separately and are not invoked by `main.m`; their presence is not evidence of a validated LS comparison. Positive-clearance, bidisperse/polydisperse, high-density ceiling, finite-duration Monte Carlo, ablation, robustness, sensitivity, and scaling studies are not all integrated into the consolidated workflow. Some investigations require coordinate snapshots, checkpoints, or inputs absent from this package. Later manuscript panels are not all reconstructed by the included plotting code.
+The automated core benchmark covers two-dimensional, monodisperse, fixed-final-radius disks under periodic boundary conditions. Original supplementary study families and archived numerical reference files are additionally provided under `studies/manuscript/` and `inputs/supplementary_reference.zip`; they are not invoked by `main.m`. Their kernels and sampler choices can differ from the core benchmark and have not been silently unified.
 
-See `docs/VALIDATION_AND_SCOPE.md`, `docs/KERNEL_VARIANTS.csv`, and `docs/RELEASE_CHECKLIST.md` for provenance and outstanding work. Changes in source kernels, sampling, or floating-point operation ordering can affect numerical results. Complete manuscript reproducibility is not claimed.
+The study inventory covers high-density packing, matched-physics comparator/ablation studies, LS, grid/gap/domain sensitivity, ordering and finite-chain MC, and runtime/scaling. Independent geometry checks covered 182 archived coordinate files; full simulation reruns and all figure workflows have not been verified. Some exact LS continuation and MAT re-export workflows require original solver states preserved in the separate provenance deliverable, not in the clean release. MC snapshot metrics are present but full coordinates for every snapshot are not.
+
+Two limited code corrections are documented: exact upper-endpoint output coordinates are mapped to zero without wrapping arbitrary invalid coordinates, and checkpoint reuse additionally verifies the stored seed. The legacy weighted sampler, insertion/growth rules, convergence settings, and tolerances remain unchanged. The boundary correction changes legacy local cell-bin statistics in some low-density records, so full agreement with the original archive is not claimed.
+
+To run the targeted regression suite after adding `src/validation` to the path:
+
+```matlab
+vgpp_release_checks(pwd)
+```
+
+This suite exercises geometry/tolerance safeguards, the seed-7402 endpoint regression, compatible checkpoint reuse, rejection of mismatched metadata, and optional LS analytical tests. It does not replace the 240-case comparison. See `docs/MANUSCRIPT_STUDIES.md` for standalone study installation, data staging, required inputs, and execution instructions. A `v1.0.0` release candidate must wait until the unresolved comparison discrepancies and remaining release checks have been resolved.
 
 ## Citation and license
 
