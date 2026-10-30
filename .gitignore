@@ -1,0 +1,6 @@
+outputs/**
+!outputs/**/
+!outputs/**/.gitkeep
+*.asv
+*.autosave
+.DS_Store
