@@ -2,7 +2,7 @@
 
 MATLAB implementation of Void-Guided Particle Packing (VGPP) for generating two-dimensional periodic particulate representative volume elements (RVEs) composed of circular particles. The consolidated workflow implements a fixed-final-radius, monodisperse benchmark and comparison with random sequential adsorption under periodic boundary conditions (RSA-PBC).
 
-**Version:** `1.0.0-rc1`  
+**Version:** `1.0.0`  
 **Repository:** https://github.com/bsoudmand/VGPP-Periodic-RVE-Generation
 
 ## Research purpose and validation status
@@ -52,14 +52,14 @@ outputs/figures/              Generated figures
 outputs/checkpoints-historical-v3/          Generated per-realization MAT checkpoints
 docs/                         Provenance, kernel audit, scope, release checklist
 CITATION.cff                  Software citation metadata
-LICENSE_SELECTION_REQUIRED.md License decision pending
+LICENSE                       MIT license
 ```
 
 The checkpoint directory is created during execution. Generated outputs are ignored by Git, except for the directory placeholders.
 
 ## Installation
 
-Clone the repository, or download its ZIP archive and extract it to a writable directory. While the repository is private, access requires authorization from its owner.
+Clone the repository, or download its ZIP archive and extract it to a writable directory.
 
 ```bash
 git clone https://github.com/bsoudmand/VGPP-Periodic-RVE-Generation.git
@@ -172,7 +172,7 @@ To run the targeted regression suite after adding `src/validation` to the path:
 vgpp_release_checks(pwd)
 ```
 
-This suite exercises geometry/tolerance safeguards, the seed-7402 endpoint regression, compatible checkpoint reuse, rejection of mismatched metadata, and optional LS analytical tests. It does not replace the 240-case comparison. See `docs/MANUSCRIPT_STUDIES.md` for standalone study installation, data staging, required inputs, and execution instructions. This is an unpublished release candidate for `v1.0.0`. Public visibility, licensing and release/Zenodo publication still require owner approval.
+This suite exercises geometry/tolerance safeguards, the seed-7402 endpoint regression, compatible checkpoint reuse, rejection of mismatched metadata, and optional LS analytical tests. It does not replace the 240-case comparison. See `docs/MANUSCRIPT_STUDIES.md` for standalone study installation, data staging, required inputs, and execution instructions. Version `1.0.0` has been approved for publication. Release and archive identifiers are recorded only after verification.
 
 ## Author-approved manuscript Figure 4
 
@@ -182,4 +182,4 @@ The unchanged approved PNG is `figures/manuscript/Fig4_author_approved.png`. Its
 
 Use `CITATION.cff` to cite the software authors, title, version, repository, and the exact commit used. Cite any associated article separately once its bibliographic details are verified. No publication or software DOI is assigned in this metadata.
 
-An open-source license has not yet been approved. MIT is proposed, but no MIT permission grant is applied by this README. The repository remains private pending the owner's approval for public visibility. See `LICENSE_SELECTION_REQUIRED.md`.
+This software is distributed under the [MIT License](LICENSE), copyright © 2026 Behzad Hashemi Soudmand and Rasool Mohsenzadeh. MATLAB and its toolboxes are separate products subject to their own licenses.

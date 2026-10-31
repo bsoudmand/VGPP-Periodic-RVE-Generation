@@ -1,6 +1,3 @@
-# License selection required
+# License decision
 
-The authors have not selected a redistribution license. Do not publish this repository
-as open source until the owners approve and add the full text of the selected license
-(e.g., MIT, BSD-3-Clause, Apache-2.0 or another appropriate choice) in a `LICENSE` file.
-A code archive without an open-source license is not an open-source grant.
+The repository owner approved the MIT License on 2026-10-31, with copyright held by Behzad Hashemi Soudmand and Rasool Mohsenzadeh (2026). The complete permission grant and disclaimer are in [LICENSE](LICENSE). This historical decision file is retained for traceability.
