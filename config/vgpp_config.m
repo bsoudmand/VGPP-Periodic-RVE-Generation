@@ -55,5 +55,5 @@ params.referenceFile = fullfile(repoRoot,'inputs','reference','Table_R1_fixedRad
 params.validationTolerance = 1.0e-7;
 params.enableCheckpoints = true;
 params.resumeCheckpoints = true;
-params.checkpointFolder = fullfile(repoRoot,'outputs','checkpoints');
+params.checkpointFolder = fullfile(repoRoot,'outputs','checkpoints-historical-v3');
 end
