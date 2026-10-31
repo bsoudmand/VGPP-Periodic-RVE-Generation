@@ -1,0 +1,29 @@
+{
+  "approved_image": "Fig4_author_approved.png",
+  "approved_image_sha256": "906276dcf7ff342414d59919c023e41a281c25e337207b5ff1132794ceab2284",
+  "reference_data": "inputs/reference/Table_R1_fixedRadius_raw.csv",
+  "reference_data_sha256": "1f4af476dc58d23a09dc4beb5b4cfe80021121fdece572fc3c8564bf14b90ebf",
+  "available_plotting_source": "studies/manuscript/R5_C13_Regenerate_Fig4_R2024b.m",
+  "plotting_source_sha256": "3e8352125103aff251aa7c83b39507b6ebee34baafedb86b8645af9ba3c7fe13",
+  "source_execution_verified_in_matlab": "24.2.0.2712019 (R2024b)",
+  "source_execution_log": "Preserved in the local validation evidence; original archived-data script execution completed successfully.",
+  "reference_realizations_per_VGPP_target": 20,
+  "error_bars": "arithmetic mean plus/minus sample standard deviation, with display clipping",
+  "axis_limits_s": [
+    0,
+    2000
+  ],
+  "triangle_target_area_fraction": 0.6,
+  "runtime_mean_phi060_s": 1360.393253165,
+  "runtime_sample_sd_phi060_s": 5869.0863613567,
+  "runtime_upper_phi060_s": 7229.4796145217,
+  "exact_approved_raster_source_revision_established": false,
+  "note": "The approved PNG matches the current project export byte-for-byte. The preserved R5-C13 source matches its original inventoried source apart from documented I/O-prefix and encoding normalization, and implements the approved convention. Prior independent rendering is not pixel-identical; exact raster replay is not claimed.",
+  "approved_image_matches_current_project_export_byte_for_byte": true,
+  "original_plotting_source_sha256": "9c82e67c3cf3d9798b65a825298dcbfb3f356bd9bf2ea3276d4aa629d63c11f5",
+  "revised_manuscript_pdf_sha256": "6637b9824e4eb8438bc3204281dc59f277856afbd71993582bb82f36282c72ba",
+  "revised_manuscript_caption_sd_verified_page": 11,
+  "revised_manuscript_triangle_explanation_verified_page": 12,
+  "numerical_statistics_independently_checked": 72,
+  "maximum_statistics_absolute_difference": 5.115907697472721e-13
+}
