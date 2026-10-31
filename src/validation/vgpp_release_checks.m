@@ -40,9 +40,28 @@ save(file,'-struct','changed','-v7.3');
 guard=onCleanup(@() restoreCheckpoint(file,original));
 rejectCheckpoint(@() benchmark_case_checkpoint(p,"VGPP",.4,n,1,2));
 clear guard;
+% Version-2 records cannot recover boundary-side metadata automatically.
+changed=original;changed.formatVersion=2;
+save(file,'-struct','changed','-v7.3');
+guard=onCleanup(@() restoreCheckpoint(file,original));
+rejectCheckpoint(@() benchmark_case_checkpoint(p,"VGPP",.4,n,1,2));
+clear guard;
+changed=original;changed=rmfield(changed,'historicalParticleTable');
+save(file,'-struct','changed','-v7.3');
+guard=onCleanup(@() restoreCheckpoint(file,original));
+rejectCheckpoint(@() benchmark_case_checkpoint(p,"VGPP",.4,n,1,2));
+clear guard;
+q=p;q.resumeCheckpoints=false;
+rejectCheckpoint(@() benchmark_case_checkpoint(q,"VGPP",.4,n,1,2));
+% Upper-boundary storage maps to zero geometry without changing genuine zero.
+c=table([1;2],[0;0],[1;2],[.18;.18], ...
+    'VariableNames',{'ID','x','y','radius'});h=c;h.x(1)=p.Lx;
+validate_historical_coordinates(c,h,p);
+h.x(2)=1;
+rejectGeometry(@() validate_historical_coordinates(c,h,p));
 ls_opt_selftest();
 Check=["Core self-test";"Continuous-coordinate tolerance";"Invalid geometry rejection"; ...
-    "Upper-endpoint seed 7402 regression";"Checkpoint resume and identity";"Optional LS analytical tests"];
+    "Upper-endpoint seed 7402 regression";"Checkpoint v3 resume, legacy rejection, metadata and overwrite protection";"Optional LS analytical tests"];
 Passed=true(numel(Check),1);report=table(Check,Passed);
 writetable(report,fullfile(outDir,'release_checks.csv'));
 disp(report);

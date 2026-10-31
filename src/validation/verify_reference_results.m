@@ -1,7 +1,13 @@
 function report = verify_reference_results(actualFile, referenceFile, outDir, tol)
 %VERIFY_REFERENCE_RESULTS Compare rerun records against archived benchmark.
-assert(isfile(actualFile) && isfile(referenceFile), 'Benchmark or reference CSV missing.');
-a = readtable(actualFile,'TextType','string');
+assert(isfile(referenceFile),'Reference CSV missing.');
+% Accept full-precision checkpoint rows as well as the exported CSV.
+if istable(actualFile)
+    a=actualFile;
+else
+    assert(isfile(actualFile),'Benchmark CSV missing.');
+    a=readtable(actualFile,'TextType','string');
+end
 b = readtable(referenceFile,'TextType','string');
 keys = {'Method','TargetVF','Run','Seed'};
 required = [keys,{'TargetN','ReachedTarget','NumberOfParticles','FinalVF','MeanRadius','MaxOverlap', ...
@@ -25,6 +31,8 @@ metricFields={'FinalVF','DiscreteTargetVF','MeanRadius','RadiusScale', ...
     'MeanNND','NNDCV','RDFFirstPeak'};
 fields=[exactFields,metricFields];
 Field=string(fields(:)); MaxAbsoluteDifference=NaN(numel(fields),1);
+MaxRelativeDifference=NaN(numel(fields),1);
+MismatchedCases=zeros(numel(fields),1);
 Pass=false(numel(fields),1);
 NonfinitePatternMatch=false(numel(fields),1);
 for k=1:numel(fields)
@@ -36,15 +44,24 @@ for k=1:numel(fields)
     NonfinitePatternMatch(k) = masksMatch;
     finite = isfinite(x) & isfinite(y);
     if any(finite)
-        MaxAbsoluteDifference(k) = max(abs(x(finite)-y(finite)));
+        difference=abs(x(finite)-y(finite));
+        MaxAbsoluteDifference(k) = max(difference);
+        denominator=abs(y(finite));
+        relative=zeros(size(difference));
+        nonzero=denominator>0;
+        relative(nonzero)=difference(nonzero)./denominator(nonzero);
+        relative(~nonzero & difference>0)=Inf;
+        MaxRelativeDifference(k)=max(relative);
     elseif masksMatch
         MaxAbsoluteDifference(k) = 0;
+        MaxRelativeDifference(k) = 0;
     end
     threshold = tol;
     if ismember(fields{k},exactFields), threshold=0; end
+    MismatchedCases(k)=sum(abs(x(finite)-y(finite))>threshold)+sum(~(isfinite(x)|isfinite(y)) & ~(isnan(x)&isnan(y)) & x~=y)+sum(xor(isfinite(x),isfinite(y)));
     Pass(k) = masksMatch && MaxAbsoluteDifference(k)<=threshold;
 end
-report=table(Field,MaxAbsoluteDifference,NonfinitePatternMatch,Pass);
+report=table(Field,MaxAbsoluteDifference,MaxRelativeDifference,MismatchedCases,NonfinitePatternMatch,Pass);
 writetable(report,fullfile(outDir,'reference_comparison.csv'));
 if ~all(Pass)
     warning('VGPP:ReferenceMismatch', ...
