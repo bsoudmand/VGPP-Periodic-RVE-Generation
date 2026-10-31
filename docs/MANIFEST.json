@@ -1,7 +1,7 @@
 {
   "package": "VGPP MATLAB R2024b core benchmark",
   "package_version": "1.0.0",
-  "files_count": 127,
+  "files_count": 126,
   "matlab_files": 81,
   "active_benchmark_sources": 35,
   "source_sha256": "8313894c98496ff31ef061f522dca73722ad27ff160105cedbec9ff86aa2c53b",
