@@ -19,5 +19,11 @@
   "supplementary_reference_entries": 268,
   "checkpoint_format_version": 3,
   "statistical_convention": "historical-boundary-v1",
-  "license": "MIT"
+  "license": "MIT",
+  "release_tag": "v1.0.0",
+  "release_commit": "4d067c6d71c97ae51a5e9743e73b4963afce6c09",
+  "version_doi": "10.5281/zenodo.23834138",
+  "concept_doi": "10.5281/zenodo.23834137",
+  "public": true,
+  "main_metadata_updated_after_release": true
 }

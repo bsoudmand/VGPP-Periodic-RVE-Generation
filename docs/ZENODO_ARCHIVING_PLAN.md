@@ -1,3 +1,5 @@
+> Completed 2026-10-31: public release `v1.0.0`, commit `4d067c6d71c97ae51a5e9743e73b4963afce6c09`, archived at https://doi.org/10.5281/zenodo.23834138. Both authors, MIT license, version, repository link and the downloaded 127-file archive were verified. The procedural preparation notes below are retained for provenance.
+
 # GitHub–Zenodo publication plan — authorization pending
 
 Repository: https://github.com/bsoudmand/VGPP-Periodic-RVE-Generation. No Zenodo account connection, repository enablement, public deposit or DOI was created or verified in this work.

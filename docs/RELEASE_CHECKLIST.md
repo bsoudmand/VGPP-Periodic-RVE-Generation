@@ -11,6 +11,6 @@
 - [x] Investigate and document residual runtime limitations without changing manuscript timing evidence.
 - [x] Obtain MIT/copyright-holder approval and apply the approved root LICENSE.
 - [x] Obtain explicit public-visibility, versioned-release and Zenodo-publication authorization (2026-10-31).
-- [ ] Verify public URLs and version-specific DOI, then finalize manuscript/reviewer text.
+- [x] Verify public URLs and version-specific DOI, then finalize manuscript/reviewer text.
 
-Stable metadata is 1.0.0. Publication is in progress; no unverified tag or DOI is asserted.
+Published: `v1.0.0`, commit `4d067c6d71c97ae51a5e9743e73b4963afce6c09`. DOI: https://doi.org/10.5281/zenodo.23834138. The downloaded Zenodo archive contains all 127 expected files, byte-identical to the validated release package, with all 126 inventory hashes verified. Subsequent main-branch citation updates do not alter the release snapshot.
