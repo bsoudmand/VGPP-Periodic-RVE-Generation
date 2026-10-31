@@ -11,7 +11,7 @@ authors:
     given-names: "Behzad"
   - family-names: "Mohsenzadeh"
     given-names: "Rasool"
-version: "0.3.1-preview"
+version: "1.0.0-rc1"
 repository-code: "https://github.com/bsoudmand/VGPP-Periodic-RVE-Generation"
 url: "https://github.com/bsoudmand/VGPP-Periodic-RVE-Generation"
 abstract: >-
@@ -20,8 +20,8 @@ abstract: >-
   studies. The consolidated workflow includes a monodisperse, fixed-final-radius
   VGPP/RSA-PBC benchmark, geometric auditing, spatial statistics, checkpoints,
   and archived-reference comparison routines. Historical boundary-cell statistics
-  are retained separately from canonical geometry. Targeted MATLAB R2024b tests and a partial full-precision benchmark
-  comparison have passed; the complete 240-case validation remains outstanding.
+  are retained separately from canonical geometry. Targeted MATLAB R2024b tests and a full-precision benchmark
+  comparison have passed, including all 240 core benchmark cases.
   Complete manuscript reproducibility is not claimed.
 keywords:
   - "Void-Guided Particle Packing"

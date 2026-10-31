@@ -2,16 +2,16 @@
 
 MATLAB implementation of Void-Guided Particle Packing (VGPP) for generating two-dimensional periodic particulate representative volume elements (RVEs) composed of circular particles. The consolidated workflow implements a fixed-final-radius, monodisperse benchmark and comparison with random sequential adsorption under periodic boundary conditions (RSA-PBC).
 
-**Version:** `0.3.1-preview`  
+**Version:** `1.0.0-rc1`  
 **Repository:** https://github.com/bsoudmand/VGPP-Periodic-RVE-Generation
 
 ## Research purpose and validation status
 
 The software supports investigation of attainable particle area fraction, geometric admissibility, computational cost, and spatial statistics in periodic disk packings. These geometric configurations are intended for particulate microstructure studies; the code does not demonstrate that an individual generated domain is statistically representative for a particular material property.
 
-**Full validation has not passed.** Historical boundary-cell statistics are now integrated in production, separately from canonical periodic geometry. All 40 low-density regression cases passed, with unchanged canonical particle tables. A formal full-precision MATLAB snapshot of 183/240 corrected or losslessly migrated records passed all 15 archived-reference quantities; the 240-case run remains incomplete. The reference CSV, seeds, solver settings and tolerances are unchanged.
+**Core benchmark validation passed in MATLAB R2024b.** Historical boundary-cell statistics are now integrated in production, separately from canonical periodic geometry. All 40 low-density regression cases passed, with unchanged canonical particle tables. An all-descriptor full-precision MATLAB audit of 240/240 corrected or losslessly migrated records passed all 15 archived-reference quantities; all 240 benchmark cases and the final output/dependency/safeguard checks completed successfully. The reference CSV, seeds, solver settings and tolerances are unchanged.
 
-MATLAB R2024b geometry/sampler safeguards, v3 checkpoint/restart tests, and optional LS analytical tests passed. Selected archived-data audits and both available Figure 4 plotting scripts executed successfully. These checks do not establish complete manuscript reproducibility. The approved manuscript Figure 4 error-bar convention remains unverified. See `docs/VALIDATION_REPORT.md`, `docs/FIG4_PROVENANCE.md`, and `docs/MANUSCRIPT_STUDIES.md` for evidence and scope.
+MATLAB R2024b geometry/sampler safeguards, v3 checkpoint/restart tests, and optional LS analytical tests passed. Selected archived-data audits and both available Figure 4 plotting scripts executed successfully. Supplementary-study limitations remain; complete manuscript reproducibility is not claimed. The author-approved Figure 4 PNG, original-data statistics and corresponding R5-C13 source convention are preserved under `figures/manuscript/`. See `docs/VALIDATION_REPORT.md`, `docs/FIG4_PROVENANCE.md`, and `docs/MANUSCRIPT_STUDIES.md` for evidence and scope.
 
 ## Main algorithm features
 
@@ -172,7 +172,11 @@ To run the targeted regression suite after adding `src/validation` to the path:
 vgpp_release_checks(pwd)
 ```
 
-This suite exercises geometry/tolerance safeguards, the seed-7402 endpoint regression, compatible checkpoint reuse, rejection of mismatched metadata, and optional LS analytical tests. It does not replace the 240-case comparison. See `docs/MANUSCRIPT_STUDIES.md` for standalone study installation, data staging, required inputs, and execution instructions. A `v1.0.0` release candidate must wait until the incomplete full benchmark, Figure 4 provenance, and remaining release checks have been resolved.
+This suite exercises geometry/tolerance safeguards, the seed-7402 endpoint regression, compatible checkpoint reuse, rejection of mismatched metadata, and optional LS analytical tests. It does not replace the 240-case comparison. See `docs/MANUSCRIPT_STUDIES.md` for standalone study installation, data staging, required inputs, and execution instructions. This is an unpublished release candidate for `v1.0.0`. Public visibility, licensing and release/Zenodo publication still require owner approval.
+
+## Author-approved manuscript Figure 4
+
+The unchanged approved PNG is `figures/manuscript/Fig4_author_approved.png`. Its input is the original archived 20-realization benchmark, distinct from expanded timing studies and new validation runtimes. Panel (b) uses arithmetic mean ± sample SD, a 0–2000 s axis, and an upper-clipping triangle at nominal area fraction 0.60. The available R5-C13 script, exported statistics and checksums are documented in that folder. The earlier display-convention issue is resolved; exact pixel replay across independent renderings is not claimed.
 
 ## Citation and license
 

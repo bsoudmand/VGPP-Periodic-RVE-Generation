@@ -1,6 +1,9 @@
+# Generated benchmark tables, figures, checkpoints, and validation output.
 outputs/**
 !outputs/**/
 !outputs/**/.gitkeep
+
+# MATLAB editor and operating-system temporary files.
 *.asv
 *.autosave
 .DS_Store
