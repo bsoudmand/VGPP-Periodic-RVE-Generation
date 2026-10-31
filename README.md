@@ -172,7 +172,7 @@ To run the targeted regression suite after adding `src/validation` to the path:
 vgpp_release_checks(pwd)
 ```
 
-This suite exercises geometry/tolerance safeguards, the seed-7402 endpoint regression, compatible checkpoint reuse, rejection of mismatched metadata, and optional LS analytical tests. It does not replace the 240-case comparison. See `docs/MANUSCRIPT_STUDIES.md` for standalone study installation, data staging, required inputs, and execution instructions. Version `1.0.0` has been approved for publication. Release and archive identifiers are recorded only after verification.
+This suite exercises geometry/tolerance safeguards, the seed-7402 endpoint regression, compatible checkpoint reuse, rejection of mismatched metadata, and optional LS analytical tests. It does not replace the 240-case comparison. See `docs/MANUSCRIPT_STUDIES.md` for standalone study installation, data staging, required inputs, and execution instructions. Version [`v1.0.0`](https://github.com/bsoudmand/VGPP-Periodic-RVE-Generation/releases/tag/v1.0.0) is published and archived in [Zenodo](https://doi.org/10.5281/zenodo.23834138).
 
 ## Author-approved manuscript Figure 4
 
@@ -180,6 +180,6 @@ The unchanged approved PNG is `figures/manuscript/Fig4_author_approved.png`. Its
 
 ## Citation and license
 
-Use `CITATION.cff` to cite the software authors, title, version, repository, and the exact commit used. Cite any associated article separately once its bibliographic details are verified. No publication or software DOI is assigned in this metadata.
+Use `CITATION.cff` to cite the software authors, title, version, repository, and the exact commit used. Cite any associated article separately once its bibliographic details are verified. The version-specific software DOI is [10.5281/zenodo.23834138](https://doi.org/10.5281/zenodo.23834138). The archived release commit is `4d067c6d71c97ae51a5e9743e73b4963afce6c09`. Cite the associated article separately; no article DOI is asserted. The `main` branch includes subsequent citation/documentation updates; the published `v1.0.0` tag and Zenodo file retain the release snapshot.
 
 This software is distributed under the [MIT License](LICENSE), copyright © 2026 Behzad Hashemi Soudmand and Rasool Mohsenzadeh. MATLAB and its toolboxes are separate products subject to their own licenses.

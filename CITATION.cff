@@ -2,8 +2,8 @@ cff-version: 1.2.0
 message: >-
   If you use this software, cite the authors, software title, version, repository
   URL, and exact commit used. Cite the associated research article separately
-  when its bibliographic details are available. No publication or software DOI
-  has been assigned in this metadata.
+  when its bibliographic details are available. Cite the version-specific
+  software DOI below; no research-article DOI is asserted.
 type: software
 title: "Void-Guided Particle Packing (VGPP) for Two-Dimensional Periodic RVE Generation: MATLAB Implementation"
 authors:
@@ -13,6 +13,8 @@ authors:
     given-names: "Rasool"
 version: "1.0.0"
 license: "MIT"
+date-released: "2026-10-31"
+doi: "10.5281/zenodo.23834138"
 repository-code: "https://github.com/bsoudmand/VGPP-Periodic-RVE-Generation"
 url: "https://github.com/bsoudmand/VGPP-Periodic-RVE-Generation"
 abstract: >-
