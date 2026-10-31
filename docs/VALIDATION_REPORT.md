@@ -74,3 +74,7 @@ The supplied approved Figure 4 PNG matches the current project export byte-for-b
 Final audited execution origins: 136 losslessly migrated cases and 104 regenerated cases. Earlier version-2 states remain preserved.
 
 The exported 240-row benchmark CSV was independently compared with the original unmodified reference CSV in Python. All 15 fields passed the same absolute thresholds; see `CSV_OUTPUT_COMPARISON.csv`. This supplements the full-precision MATLAB recomputation and the successful MATLAB output gate.
+
+## Overlap reporting convention
+
+The preserved legacy audit normalizes `MaxOverlap` to zero when the maximum overlap is no greater than 1e-8; `OverlappingPairs` counts tolerance violations. `MinClearance` retains the signed clearance. In the default zero-gap benchmark, the most negative clearance is -9.99990507066784e-9 (VGPP, target 0.65, run 8, seed 7808), so sub-tolerance overlap is present even though the reported `MaxOverlap` is zero. All 240 geometries meet the specified allowance; strict zero-overlap is not claimed. No output definition, reference value or tolerance was changed.
