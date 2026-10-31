@@ -170,6 +170,11 @@ function result = run_fixed_final_radius_VGPP(params)
         end
     end
 
+    % Preserve upper-boundary storage for the original cell statistics.
+    % These values do not feed insertion, relaxation, or geometric audits.
+    historicalX = cxList;
+    historicalY = cyList;
+
     % The candidate grid includes the periodic upper endpoints. Represent
     % those exact endpoints by their identical zero-boundary locations.
     % Do not wrap arbitrary invalid or nonfinite coordinates: the audit
@@ -188,6 +193,8 @@ function result = run_fixed_final_radius_VGPP(params)
         'VariableNames',{'ID','x','y','radius'});
 
     result.particleTable = particleTable;
+    result.historicalParticleTable = table(particleID,historicalX,historicalY,rList, ...
+        'VariableNames',{'ID','x','y','radius'});
     result.maxAreaFraction = sum(pi*rList.^2)/A;
     result.reachedTarget = reachedTarget;
     result.geometryValid = reachedFinalRadius && ~hasOverlap && ...
