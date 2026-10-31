@@ -1,3 +1,5 @@
+> Historical preparation snapshot. The current correction and executed results are documented in `VALIDATION_REPORT.md` and `SOURCE_TRACEABILITY.md`.
+
 # Response to independent repository review
 
 This document records changes made after the second static code review. None of the modifications below constitutes MATLAB execution validation.

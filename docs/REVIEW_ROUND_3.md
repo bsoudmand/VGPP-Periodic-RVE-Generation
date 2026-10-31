@@ -1,3 +1,5 @@
+> Historical preparation snapshot. The current correction and executed results are documented in `VALIDATION_REPORT.md` and `SOURCE_TRACEABILITY.md`.
+
 # Second independent review: technical corrections
 
 This preview addresses the four outstanding findings from the second external review. **It has not been executed in MATLAB R2024b.**

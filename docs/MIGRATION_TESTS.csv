@@ -1,0 +1,5 @@
+Test,Passed
+Different numerical configuration rejected,1
+Unsupported source rejected,1
+Existing v3 preserved byte-for-byte,1
+Lost boundary side forces regeneration,1

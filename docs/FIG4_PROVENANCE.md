@@ -1,0 +1,18 @@
+# Figure 4b provenance investigation
+
+The author-approved manuscript figure was not modified or replaced. The inspected project PDF, page 11, SHA256 `bcc913d3cf1736f893f89370df97eb6dcd9afbbaee13ace679390825f7b2f654`, shows a linear 0–2000 s axis, a shorter whisker at area fraction 0.60, and no clipping triangle. A saved original PNG `Fig4_ordering_runtime_R5_C13.png` visually matches that presentation; its SHA256 is `b6dc120ec3bf41879f44f7f24bd33654c80b5aaacf236fe3fdc74681df8cf7dd`. Its filename does not establish which revision of a plotting script produced it. It did not match any embedded DOCX media file byte-for-byte, so an exact embedded-asset identity is not asserted.
+
+| Representation | Traceable source and data | Error-bar convention |
+|---|---|---|
+| Approved manuscript image / saved original PNG | Project PDF and PNG; exact generating script revision unavailable | Not established; caption says corresponding plotted error bars without a statistical definition |
+| Repository `Fig4_from_archived_data.png` | `src/benchmark/plot_runtime_fig4.m`, archived 240-row fixed-radius CSV | Arithmetic mean ± sample SD among attained targets; whiskers clipped to 0–2000 s, upper clipping marked with a triangle |
+| Available R5-C13 source | `studies/manuscript/R5_C13_Regenerate_Fig4_R2024b.m`, same archived CSV | Same clipped linear-axis sample-SD convention; newly executed output differs from the saved original PNG |
+| Available R4-C10 source | `R4_C10_Regenerate_Fig4_R2024b.m` in original reproduction ZIP; same script also in source provenance ZIP | Mean ± sample SD, logarithmic axis; negative lower endpoints truncated to a positive floor |
+
+Both available standalone scripts were executed in MATLAB R2024b on scratch copies of the archived CSV. Both exported numerical-statistics tables match each other and the previously verified repository figure table. They use 20 successful VGPP realizations at each target, with RSA-PBC included only for the successfully attained 0.40/0.50 targets. These are not the expanded 40-realization timing analyses. No data deletion, winsorization, or alternative runtime dataset was used in these reproductions.
+
+At fraction 0.60: mean 1360.393253165 s; sample SD 5869.0863613567 s; median 47.60405625 s; maximum individual time 26295.3338769 s. The untruncated mean-plus-SD endpoint is 7229.4796145217 s. These quantities are distinct. The available SD scripts therefore cannot explain the short manuscript whisker simply by clipping at 2000 s. The remaining possibilities cannot be distinguished from the available sources; SEM, confidence intervals, manual truncation, or another data revision must not be asserted without evidence.
+
+Missing information: the exact source revision and numeric error vector used to export the approved PNG/manuscript panel, or a saved MATLAB figure with its error-bar data and documented rule. A filename alone is insufficient.
+
+Recommendation: retain the approved image pending provenance clarification. Define its actual error-bar rule and dataset in the caption/methods once verified. If the authors choose the currently available SD workflow, a supported caption would read: “Panel (b) shows arithmetic mean runtime ± sample standard deviation across 20 original realizations; RSA-PBC includes attained targets only. The display is limited to 0–2000 s; out-of-range SD whiskers are clipped and upper clipping is marked by triangles.” This wording applies to the regenerated SD plot, not automatically to the approved manuscript image. Changing the approved figure requires a separate author decision.

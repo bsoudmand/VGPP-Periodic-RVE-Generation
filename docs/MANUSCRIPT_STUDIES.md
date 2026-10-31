@@ -17,6 +17,25 @@ The original study families are retained as standalone scripts under `studies/ma
 | Fixed-density Monte Carlo | `R1_C2_FixedDensityMC_Postprocess.m` | `R1_C2_mc/`: 72 snapshot-metric rows, 480 mixing rows, three summaries | Six starting packings and finite-chain outputs are available. MC terminal/snapshot coordinates are not all exported, so every reported snapshot cannot be independently re-audited from coordinates. These short chains do not establish equilibrium sampling. No redundant expensive MC rerun was performed. |
 | Runtime profiling and empirical scaling | `R1_C3_RuntimeScatter_Focused.m`; `R2_C38_RuntimeScaling.m`; `R5_C7_AdditionalRuntimeReplications_R2024b.m` | 9 profile records; 50 scaling records; 60 additional timing records | Original records and settings are included. Scaling is empirical over the sampled sizes, not an asymptotic complexity result. New benchmark timings were collected with concurrent audit work and briefly overlapping launchers; they are descriptive, not an isolated performance validation. |
 
+## Verification classification
+
+No supplementary generator family is classified as fully reproduced end to end in this preparation.
+
+| Investigation | Classification | Basis |
+|---|---|---|
+| High-density reachability | Partially verified | One 747-particle geometry audited; all 12 generator cases not rerun |
+| Weighted/uniform comparisons | Archived but not independently reproduced | Scripts/settings and 360 records inspected; no full generator rerun |
+| Component ablation | Archived but not independently reproduced | Eighteen bounded-study records inspected; censored cases identified |
+| LS benchmarking | Partially verified | Archived production audit and analytical tests passed; exact resumption requires original solver states |
+| Grid/relaxation sensitivity | Partially verified | Coverage and archived coordinate evidence inspected; all sensitivity generators not rerun |
+| Positive gaps/periodic overlaps | Independently validated against archived numerical outputs | Full-precision MATLAB audit and independent pairwise checks of applicable coordinate files |
+| Robustness/domain size | Independently validated against archived numerical outputs | Original spatial audit executed on 100 saved configurations; generation not repeated |
+| Sixfold ordering/RDF | Partially verified | Sources, outputs and available coordinates inspected; full ordering postprocessing not rerun |
+| Fixed-density Monte Carlo | Partially verified | Archived finite-chain summaries inspected; some required snapshot coordinates missing |
+| Runtime profiling/scaling | Archived but not independently reproduced | Records/settings present; controlled performance reproduction not established |
+
+Exact LS continuation and certain MAT re-export workflows additionally have **missing required inputs in the clean package**; their original states are preserved in the separate private provenance archive. This is not a claim that those scientific states never existed.
+
 ## Running a standalone study without changing its mathematics
 
 1. Use a new writable study workspace outside the repository's source tree. Copy the desired standalone script there. Do not add all standalone scripts to the active core benchmark path.

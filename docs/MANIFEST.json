@@ -1,10 +1,10 @@
 {
   "package": "VGPP MATLAB R2024b core benchmark",
   "package_version": "0.3.1-preview",
-  "files_count": 108,
-  "matlab_files": 79,
-  "active_benchmark_sources": 34,
-  "source_sha256": "80af3a550fdec5744dbfbb3934fe3ed6db2fc532edbfa6f4591f7ef5931cc391",
+  "files_count": 116,
+  "matlab_files": 81,
+  "active_benchmark_sources": 35,
+  "source_sha256": "8313894c98496ff31ef061f522dca73722ad27ff160105cedbec9ff86aa2c53b",
   "reviewed_source_scripts": 42,
   "archived_benchmark_records": 240,
   "matlab_executed": true,
@@ -12,9 +12,11 @@
   "license_approved": false,
   "matlab_self_test_passed": true,
   "full_benchmark_validated": false,
-  "validation_scope": "Targeted regressions and archived-data audits passed; full rerun incomplete; local-bin statistic discrepancies unresolved",
+  "validation_scope": "Historical binning integrated; production 40-case regression and formal partial full-precision benchmark pass; 240-case completion and approved figure provenance pending",
   "matlab_version": "24.2.0.2712019 (R2024b)",
-  "compared_checkpoint_cases": 162,
+  "compared_checkpoint_cases": 183,
   "manuscript_study_scripts": 33,
-  "supplementary_reference_entries": 268
+  "supplementary_reference_entries": 268,
+  "checkpoint_format_version": 3,
+  "statistical_convention": "historical-boundary-v1"
 }

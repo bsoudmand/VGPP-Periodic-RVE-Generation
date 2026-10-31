@@ -1,3 +1,5 @@
+> Historical preparation snapshot. The current correction and executed results are documented in `VALIDATION_REPORT.md` and `SOURCE_TRACEABILITY.md`.
+
 # MATLAB R2024b verification protocol for preview v0.3
 
 **Environment:** MATLAB R2024b with Image Processing Toolbox and Java enabled. Run from the repository root. Do not use checkpoint directories created by preview v0.2: v0.3 intentionally rejects them.
