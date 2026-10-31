@@ -13,3 +13,16 @@ For study-level reproduction, follow `docs/MANUSCRIPT_STUDIES.md` to stage the o
 Suggested caption wording for panel (b): “Arithmetic mean runtime ± sample standard deviation from the original 20-realization benchmark; RSA-PBC results include attained targets only. The runtime axis is limited to 0–2000 s. The triangle at area fraction 0.60 indicates that the upper mean-plus-SD limit exceeds the displayed range.”
 
 The revised manuscript PDF was checked: page 11 defines the SD bars and page 12 explains the triangle. The PDF checksum is recorded in the provenance JSON.
+
+## Optional numerical reproduction in a separate output folder
+
+From the repository root in MATLAB R2024b, the existing helper can read the original CSV directly:
+
+```matlab
+addpath(fullfile(pwd,'src','benchmark'));
+checkDir = fullfile(pwd,'outputs','fig4-archived-data-check');
+plot_runtime_fig4(fullfile(pwd,'inputs','reference', ...
+    'Table_R1_fixedRadius_raw.csv'), checkDir, checkDir);
+```
+
+This creates verification outputs under ignored `outputs/`, leaving the approved reference asset in this folder intact. To use the standalone R5-C13 script instead, copy that script and `inputs/reference/Table_R1_fixedRadius_raw.csv` into a separate writable workspace, then run the copied script. Do not substitute the new benchmark timing CSV for the original-data figure.
