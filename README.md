@@ -145,7 +145,7 @@ The supplied `inputs/reference/Table_R1_fixedRadius_raw.csv` is an archived inpu
 | `validationTolerance` | `1e-7` | Absolute tolerance for finite, continuous metrics in the archived-reference comparison |
 | Final radius consistency | `1e-12` | Absolute radius check used in the VGPP geometry-validity flag |
 
-Reference identifiers and discrete counts/status fields are compared exactly. Nonfinite-value patterns must also match. Elapsed runtime is excluded from numerical equivalence testing. The overlap allowance does not imply strictly disjoint disks in exact arithmetic, and the distance-transform grid is a candidate-generation discretization rather than the final overlap acceptance criterion.
+Reference identifiers and discrete counts/status fields are compared exactly. Nonfinite-value patterns must also match. Elapsed runtime is excluded from numerical equivalence testing. The overlap allowance does not imply strictly disjoint disks in exact arithmetic, and the distance-transform grid is a candidate-generation discretization rather than the final overlap acceptance criterion. The legacy `MaxOverlap` output is normalized to zero when the maximum does not exceed the audit tolerance. A negative `MinClearance` within the allowance can therefore coexist with `MaxOverlap=0`; inspect the clearance when assessing sub-tolerance overlap.
 
 ## Reproducibility and validation procedure
 
