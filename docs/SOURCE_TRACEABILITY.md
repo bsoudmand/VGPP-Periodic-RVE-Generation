@@ -16,3 +16,7 @@ Changes from preparation commit `6f1b99847bc2f11580a7ef2c4ee1c20d14a42c7a`:
 | `src/validation/vgpp_release_checks.m` | Version/metadata/overwrite and historical-coordinate regressions |
 
 Insertion, weighted legacy sampling, radius generation/growth, relaxation, seed assignments, stopping criteria and tolerances were not changed. Canonical particle tables matched saved configurations in each regenerated case checked by the running driver. Checkpoint source fingerprint is `8313894c98496ff31ef061f522dca73722ad27ff160105cedbec9ff86aa2c53b`. The fingerprint includes main/config/core/analysis/benchmark; validation utilities are outside this fingerprint and are covered by source inventory hashes.
+
+## Publication follow-up
+
+The author-approved Figure 4 PNG, original-20 statistics and provenance JSON are preserved under `figures/manuscript/`. The source scripts and mathematical kernels were not changed. Cached-only ordering postprocessing was independently executed without generation or MC. `.gitignore` continues to exclude all generated outputs/checkpoints while the approved manuscript reference asset is intentionally tracked. These documentation/assets do not alter the active benchmark fingerprint.

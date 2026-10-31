@@ -1,0 +1,13 @@
+Method,TargetVF,Intended,Validated,TargetAttained,ValidBelowTarget,InvalidGeometry,OutsideFormalAudit
+VGPP,0.4,20,20,20,0,0,0
+RSA-PBC,0.4,20,20,20,0,0,0
+VGPP,0.5,20,20,20,0,0,0
+RSA-PBC,0.5,20,20,20,0,0,0
+VGPP,0.55,20,20,20,0,0,0
+RSA-PBC,0.55,20,20,0,20,0,0
+VGPP,0.6,20,20,20,0,0,0
+RSA-PBC,0.6,20,20,0,20,0,0
+VGPP,0.65,20,20,20,0,0,0
+RSA-PBC,0.65,20,20,0,20,0,0
+VGPP,0.7,20,20,20,0,0,0
+RSA-PBC,0.7,20,20,0,20,0,0

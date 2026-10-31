@@ -1,0 +1,6 @@
+File,Rows,NumericValuesCompared,MaxAbsoluteDifference,Mismatches,ExecutionMetadataDifferences,ByteIdentical
+R1_C2_matched_effects.csv,6,42,2.5587171270657905e-15,0,0,False
+R1_C2_raw.csv,18,324,4.607425560466206e-15,0,24,False
+R1_C2_rdf_individual.csv,1800,10800,0.0,0,0,True
+R1_C2_rdf_summary.csv,900,4500,0.0,0,0,True
+R1_C2_summary.csv,9,117,1.6028844918025698e-15,0,6,False

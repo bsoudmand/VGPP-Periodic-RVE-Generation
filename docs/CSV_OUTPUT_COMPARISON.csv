@@ -1,0 +1,16 @@
+Field,ComparedCases,MaxAbsoluteDifference,MaxRelativeDifference,Mismatches,Tolerance,Pass
+TargetN,240,0.0,0.0,0,0,True
+ReachedTarget,240,0.0,0.0,0,0,True
+NumberOfParticles,240,0.0,0.0,0,0,True
+OverlappingPairs,240,0.0,0,0,0,True
+FinalVF,240,7.105427357601002e-15,1.3047927619044337e-14,0,1e-07,True
+DiscreteTargetVF,240,0.0,0.0,0,1e-07,True
+MeanRadius,240,0.0,0.0,0,1e-07,True
+RadiusScale,240,0.0,0.0,0,1e-07,True
+MaxOverlap,240,0.0,0,0,1e-07,True
+MinClearance,240,4.399692415946177e-16,3.0431205876978326e-13,0,1e-07,True
+LocalVFRSD,240,0.0,0.0,0,1e-07,True
+LowVFCellFraction,240,0.0,0.0,0,1e-07,True
+MeanNND,240,0.0,0.0,0,1e-07,True
+NNDCV,240,1.1102230246251565e-16,1.1277979171120083e-15,0,1e-07,True
+RDFFirstPeak,240,0.0,0.0,0,1e-07,True

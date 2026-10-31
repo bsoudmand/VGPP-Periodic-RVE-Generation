@@ -13,3 +13,12 @@ The archived VGPP realization at target 0.60, run 18, seed 7718 records 26295.33
 | Execution conditions | New timings include concurrent audit work; two early launchers briefly overlapped. New seed 7813 at fraction 0.65 records 33819.492411 s. An attempt to inspect Windows power/suspend event logs was denied. Sleep/suspension is a hypothesis, not an established cause of either outlier. |
 
 Conclusion: the specific cause of the 7718 discrepancy remains unresolved. Retain original manuscript timing evidence unchanged. New values are descriptive execution observations, not isolated performance validation or proof of a speedup. Exact wall-clock equality is not an acceptance criterion for geometric/statistical reproduction. Controlled profiling on a recorded environment would be a separately identified timing study; it must not silently replace the original benchmark.
+
+## Corrected-run repetitions
+
+| VGPP seed | Target | Archived runtime (s) | Prior consolidated runtime (s) | Corrected-run runtime (s) |
+|---|---:|---:|---:|---:|
+| 7718 | 0.60 | 26295.3338769 | 60.4780564 | 61.3857977 |
+| 7813 | 0.65 | 132.5114778 | 33819.492411 | 133.0258385 |
+
+The long timing measurements were not repeated in these corrected executions. Checked numerical quantities agree, and the driver verifies canonical configurations against preserved prior checkpoints. This supports reporting the timing outliers as unresolved execution observations; it does not identify their cause or establish a speedup. Original case-level profiling, CPU-time and power-state evidence remains unavailable. New timings include non-isolated workload and some retained migration timings.

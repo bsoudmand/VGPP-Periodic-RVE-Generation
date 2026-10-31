@@ -1,0 +1,8 @@
+Study,ComparedValues,Mismatches,MaxAbsoluteDifference
+Ablation_summary,60,0,3.410605131648481e-13
+MC_initial_coordinate_crosscheck,216,0,0.0
+MC_snapshot_consistency,72,0,9.575673587391975e-16
+MC_snapshot_mixing_crosscheck,144,0,1.0547118733938987e-15
+MC_summary,24,0,4.996003610813204e-16
+Sampling_paired,48,0,1.5987211554602254e-14
+Sampling_summary,234,0,2.2737367544323206e-13
