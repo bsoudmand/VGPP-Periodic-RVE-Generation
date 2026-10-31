@@ -1,16 +1,16 @@
-# Publication materials — unpublished candidate
+# Publication materials — approved v1.0.0 preparation
 
 Manuscript: “Void-guided generation of high-area-fraction periodic particulate RVEs with quantified spatial statistics.” Revised submission to Scientific Reports. No article DOI or publication date is asserted.
 
-Authors: Behzad Hashemi Soudmand; Rasool Mohsenzadeh. Current software preparation: `1.0.0-rc1`. Proposed stable target: `v1.0.0`, requiring final metadata promotion and explicit publication approval. Repository: https://github.com/bsoudmand/VGPP-Periodic-RVE-Generation (currently private). No release, tag or Zenodo record has been published in this work.
+Authors: Behzad Hashemi Soudmand; Rasool Mohsenzadeh. Software version: `1.0.0`. The owner approved MIT licensing, public visibility, the versioned release and Zenodo archiving on 2026-10-31. Repository: https://github.com/bsoudmand/VGPP-Periodic-RVE-Generation (publication in progress). Release and archive identifiers will be added after verification.
 
 ## Repository description
 
 MATLAB implementation of Void-Guided Particle Packing for two-dimensional periodic particulate RVEs, with a fixed-final-radius VGPP/RSA-PBC benchmark, spatial-statistical analysis, manuscript-study scripts and archived reference data.
 
-## License proposal
+## License
 
-MIT is proposed with copyright “2026 Behzad Hashemi Soudmand and Rasool Mohsenzadeh,” subject to approval of the license and copyright holders. The full proposed text is in the local review package. No root LICENSE or MIT grant has been applied. License approval does not itself authorize public visibility or permanent publication.
+The approved MIT License is applied in the root LICENSE file, copyright © 2026 Behzad Hashemi Soudmand and Rasool Mohsenzadeh.
 
 ## GitHub release description — draft
 
@@ -22,7 +22,7 @@ MATLAB R2024b and Image Processing Toolbox are required for packing. Standalone 
 
 **Title:** Void-Guided Particle Packing (VGPP) for Two-Dimensional Periodic Particulate RVEs: MATLAB Implementation and Numerical Reference Data
 
-**Resource type:** Software. **Version:** `1.0.0-rc1` (unpublished candidate; synchronize with the approved final release). **License:** pending approval; MIT proposed. **Creators, in order:** Behzad Hashemi Soudmand (given name Behzad; family name Hashemi Soudmand), Rasool Mohsenzadeh (given name Rasool; family name Mohsenzadeh). Affiliations and ORCIDs have not been supplied and are not inferred.
+**Resource type:** Software. **Version:** `1.0.0`. **License:** MIT. **Creators, in order:** Behzad Hashemi Soudmand (given name Behzad; family name Hashemi Soudmand), Rasool Mohsenzadeh (given name Rasool; family name Mohsenzadeh). Affiliations and ORCIDs have not been supplied and are not inferred.
 
 **Abstract:** This software implements Void-Guided Particle Packing for constructing two-dimensional periodic disk configurations intended for particulate representative volume element studies. The MATLAB workflow combines void-guided candidate selection, batch insertion, seed-radius reduction, gradual growth and relaxation, continuous periodic geometric auditing, spatial statistics and RSA-PBC comparison. Historical boundary-side coordinates are retained for local-cell statistics separately from canonical geometric coordinates. The reference benchmark uses six nominal area fractions, 20 seeds per target and method, and restartable per-case checkpoints. All 240 core benchmark cases passed the archived-reference comparison across 15 quantities, continuous periodic geometry, independent descriptor recomputation, restart safeguards, and final MATLAB output/dependency checks. Original standalone manuscript-study scripts and numerical references are included with explicit verification levels and limitations. MATLAB R2024b and Image Processing Toolbox are required for packing. Unavailable continuation/snapshot inputs and incomplete supplementary generator reruns are documented; complete manuscript reproduction is not asserted.
 

@@ -1,7 +1,7 @@
 {
   "package": "VGPP MATLAB R2024b core benchmark",
-  "package_version": "1.0.0-rc1",
-  "files_count": 126,
+  "package_version": "1.0.0",
+  "files_count": 127,
   "matlab_files": 81,
   "active_benchmark_sources": 35,
   "source_sha256": "8313894c98496ff31ef061f522dca73722ad27ff160105cedbec9ff86aa2c53b",
@@ -9,7 +9,7 @@
   "archived_benchmark_records": 240,
   "matlab_executed": true,
   "full_study_reproduction": false,
-  "license_approved": false,
+  "license_approved": true,
   "matlab_self_test_passed": true,
   "full_benchmark_validated": true,
   "validation_scope": "Full 240-case core benchmark and final MATLAB checks passed; supplementary limitations explicitly delimited",
@@ -18,5 +18,6 @@
   "manuscript_study_scripts": 33,
   "supplementary_reference_entries": 268,
   "checkpoint_format_version": 3,
-  "statistical_convention": "historical-boundary-v1"
+  "statistical_convention": "historical-boundary-v1",
+  "license": "MIT"
 }

@@ -9,8 +9,8 @@
 - [x] Finish all 240 v3 cases, full coordinate/statistical recomputation, reference comparison, standard CSV summaries, diagnostic figures and final MATLAB checks.
 - [x] Preserve the author-approved SD/truncation figure and verify its original-data/source convention.
 - [x] Investigate and document residual runtime limitations without changing manuscript timing evidence.
-- [ ] Obtain MIT/copyright-holder approval before adding LICENSE.
-- [ ] Obtain explicit public-visibility, versioned-release and Zenodo-publication authorization.
+- [x] Obtain MIT/copyright-holder approval and apply the approved root LICENSE.
+- [x] Obtain explicit public-visibility, versioned-release and Zenodo-publication authorization (2026-10-31).
 - [ ] Verify public URLs and version-specific DOI, then finalize manuscript/reviewer text.
 
-Unpublished candidate is 1.0.0-rc1; no stable release, tag or DOI is asserted.
+Stable metadata is 1.0.0. Publication is in progress; no unverified tag or DOI is asserted.
