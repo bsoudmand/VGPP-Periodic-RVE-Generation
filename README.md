@@ -9,9 +9,9 @@ MATLAB implementation of Void-Guided Particle Packing (VGPP) for generating two-
 
 The software supports investigation of attainable particle area fraction, geometric admissibility, computational cost, and spatial statistics in periodic disk packings. These geometric configurations are intended for particulate microstructure studies; the code does not demonstrate that an individual generated domain is statistically representative for a particular material property.
 
-**Full validation has not passed.** A checkpointed 240-case rerun is in progress. At the numerically inspected snapshot (2026-10-30T20:33:45+00:00), 162 unique cases were available. Counts, target-attainment flags, radii, periodic-overlap measures, NN statistics, and RDF first peaks agreed with the matched reference records within the configured tolerances. However, `LocalVFRSD` and `LowVFCellFraction` disagreed in some cases because exact upper-boundary centers are now stored at their equivalent zero-boundary positions. The legacy cell-binning calculation is sensitive to this representation. The archived reference CSV and numerical tolerances have not been altered to force agreement.
+**Full validation has not passed.** Historical boundary-cell statistics are now integrated in production, separately from canonical periodic geometry. All 40 low-density regression cases passed, with unchanged canonical particle tables. A formal full-precision MATLAB snapshot of 183/240 corrected or losslessly migrated records passed all 15 archived-reference quantities; the 240-case run remains incomplete. The reference CSV, seeds, solver settings and tolerances are unchanged.
 
-MATLAB R2024b core/safeguard regressions, checkpoint compatibility/resume tests, and optional LS analytical tests passed. Three original archived-data MATLAB audits also completed. These checks do not establish full manuscript reproducibility or authorize a public release. See `docs/VALIDATION_REPORT.md` for quantitative results and `docs/MANUSCRIPT_STUDIES.md` for study coverage and limitations.
+MATLAB R2024b geometry/sampler safeguards, v3 checkpoint/restart tests, and optional LS analytical tests passed. Selected archived-data audits and both available Figure 4 plotting scripts executed successfully. These checks do not establish complete manuscript reproducibility. The approved manuscript Figure 4 error-bar convention remains unverified. See `docs/VALIDATION_REPORT.md`, `docs/FIG4_PROVENANCE.md`, and `docs/MANUSCRIPT_STUDIES.md` for evidence and scope.
 
 ## Main algorithm features
 
@@ -49,7 +49,7 @@ studies/manuscript/           Original standalone manuscript study families
 inputs/supplementary_reference.zip  Archived study CSVs, coordinates, settings
 outputs/benchmark/            Generated numerical tables
 outputs/figures/              Generated figures
-outputs/checkpoints/          Generated per-realization MAT checkpoints
+outputs/checkpoints-historical-v3/          Generated per-realization MAT checkpoints
 docs/                         Provenance, kernel audit, scope, release checklist
 CITATION.cff                  Software citation metadata
 LICENSE_SELECTION_REQUIRED.md License decision pending
@@ -128,7 +128,7 @@ Successful completion of the relevant stages produces:
 
 - `outputs/benchmark/Table_R1_fixedRadius_raw.csv`: per-case counts, seeds, target attainment, geometry status, runtime, and spatial statistics.
 - `outputs/benchmark/Table_R2_fixedRadius_summary.csv`: method/target summary statistics.
-- `outputs/checkpoints/case_*.mat`: saved case records, particle tables (`ID`, `x`, `y`, `radius`), configuration, and source fingerprint.
+- `outputs/checkpoints-historical-v3/case_*.mat`: saved case records, canonical and historical particle tables (`ID`, `x`, `y`, `radius`), statistical convention, configuration, and source fingerprint.
 - `outputs/benchmark/reference_comparison.csv`: full-benchmark comparison report, if the comparison stage is reached.
 - `outputs/figures/`: benchmark figures supported by the included plotting functions, subject to successful completion of preceding stages.
 - For the default 20-realization comparison workflow, `Fig4_ordering_runtime_original20.png` and `Fig4_original20_values.csv` are generated after successful reference validation. The runtime plot uses the documented R5-C13 clipped-whisker convention; consult the plotting source and exported statistics when interpreting it.
@@ -164,7 +164,7 @@ The automated core benchmark covers two-dimensional, monodisperse, fixed-final-r
 
 The study inventory covers high-density packing, matched-physics comparator/ablation studies, LS, grid/gap/domain sensitivity, ordering and finite-chain MC, and runtime/scaling. Independent geometry checks covered 182 archived coordinate files; full simulation reruns and all figure workflows have not been verified. Some exact LS continuation and MAT re-export workflows require original solver states preserved in the separate provenance deliverable, not in the clean release. MC snapshot metrics are present but full coordinates for every snapshot are not.
 
-Two limited code corrections are documented: exact upper-endpoint output coordinates are mapped to zero without wrapping arbitrary invalid coordinates, and checkpoint reuse additionally verifies the stored seed. The legacy weighted sampler, insertion/growth rules, convergence settings, and tolerances remain unchanged. The boundary correction changes legacy local cell-bin statistics in some low-density records, so full agreement with the original archive is not claimed.
+Exact upper-endpoint output coordinates are canonicalized for geometry while their original boundary sides are retained for historical local-cell statistics. Version-3 checkpoints require this lossless metadata and reject earlier formats. `src/validation/migrate_v2_checkpoint.m` supports explicit, restricted migration of eligible version-2 records; ambiguous zero-boundary VGPP cases require regeneration. See `docs/SOURCE_TRACEABILITY.md`. The legacy sampler and generation rules are unchanged. Additional raw columns expose canonical local statistics without replacing historical benchmark quantities.
 
 To run the targeted regression suite after adding `src/validation` to the path:
 
@@ -172,7 +172,7 @@ To run the targeted regression suite after adding `src/validation` to the path:
 vgpp_release_checks(pwd)
 ```
 
-This suite exercises geometry/tolerance safeguards, the seed-7402 endpoint regression, compatible checkpoint reuse, rejection of mismatched metadata, and optional LS analytical tests. It does not replace the 240-case comparison. See `docs/MANUSCRIPT_STUDIES.md` for standalone study installation, data staging, required inputs, and execution instructions. A `v1.0.0` release candidate must wait until the unresolved comparison discrepancies and remaining release checks have been resolved.
+This suite exercises geometry/tolerance safeguards, the seed-7402 endpoint regression, compatible checkpoint reuse, rejection of mismatched metadata, and optional LS analytical tests. It does not replace the 240-case comparison. See `docs/MANUSCRIPT_STUDIES.md` for standalone study installation, data staging, required inputs, and execution instructions. A `v1.0.0` release candidate must wait until the incomplete full benchmark, Figure 4 provenance, and remaining release checks have been resolved.
 
 ## Citation and license
 

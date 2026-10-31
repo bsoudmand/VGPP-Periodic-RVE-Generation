@@ -19,9 +19,10 @@ abstract: >-
   two-dimensional periodic disk configurations intended for particulate RVE
   studies. The consolidated workflow includes a monodisperse, fixed-final-radius
   VGPP/RSA-PBC benchmark, geometric auditing, spatial statistics, checkpoints,
-  and archived-reference comparison routines. Full validation of the
-  consolidated code in MATLAB R2024b remains outstanding; complete manuscript
-  reproducibility is not claimed.
+  and archived-reference comparison routines. Historical boundary-cell statistics
+  are retained separately from canonical geometry. Targeted MATLAB R2024b tests and a partial full-precision benchmark
+  comparison have passed; the complete 240-case validation remains outstanding.
+  Complete manuscript reproducibility is not claimed.
 keywords:
   - "Void-Guided Particle Packing"
   - "periodic boundary conditions"
